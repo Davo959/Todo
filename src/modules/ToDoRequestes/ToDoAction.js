@@ -44,11 +44,12 @@ export const SearchTodoList = ( data ) => {
   }
 }
 
+// For pending
 
-export const PendingFunction = (data) => {
+export const PendingFunction = ( data ) => {
   return{
     type: TODO_REQUESTS.PENDING_TODO_REQUEST,
-    payload:{data}
+    payload:{ data }
   }
 
 }

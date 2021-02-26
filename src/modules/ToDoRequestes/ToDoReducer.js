@@ -14,9 +14,8 @@ export const TODO_REQUESTS = {
   // For search task
   SEARCH_TODO_REQUEST: 'TODO_REQUESTS.SEARCH_TODO_REQUEST',
   SEARCH_TODO_SUCCESS: 'TODO_REQUESTS.SEARCH_TODO_SUCCESS',
-
+  //For Pending
   PENDING_TODO_REQUEST : 'TODO_REQUESTS.PENDING_TODO_REQUEST',
-  // PENDING_TODO_SUCCESS : 'TODO_REQUESTS.PENDING_TODO_SUCCESS',
 }
 
 const initialState = {
@@ -42,9 +41,7 @@ export default  ( state=initialState, action ) => {
     case TODO_REQUESTS.PENDING_TODO_REQUEST: {
       return {...state, CheckPending: action.payload.data,}
     }
-    // case  TODO_REQUESTS.PENDING_TODO_SUCCESS: {
-    //   return {...state, CheckPending: false,}
-    // }
+
 
     default: {
       return state

@@ -7,10 +7,10 @@ import { ErrMessage } from "../../../components/ErrMessage";
 import { TittleComponent } from "../../../components/Tittle";
 import { colorsList } from "../../../configs/constants";
 
-export const AddTodo = ({ }) => {
-  const [ Tittle, setTittle ] = React.useState(null);
-  const [ Description, setDescription ] = React.useState(null);
-  const [ Color, colorDescription ] = React.useState(null);
+export const AddTodo = ( ) => {
+  const [ Tittle, setTittle ] = React.useState('');
+  const [ Description, setDescription ] = React.useState('');
+  const [ Color, colorDescription ] = React.useState('');
   const [ Error, SetError ] = React.useState(false)
   const [ itemId, setItemId ] = React.useState('')
   const dispatch = useDispatch( )
@@ -68,6 +68,7 @@ export const AddTodo = ({ }) => {
       <div className={ 'ColorsSircleDiv' } >
         { colorsList.map(( i, item) => (
           <div
+              key={item}
               onClick={ () => handleCheckColor( i.color, item ) }
               className={ 'ColorsSircle' }
               style={{ background: i.color,

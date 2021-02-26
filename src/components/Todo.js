@@ -4,10 +4,9 @@ import Edit from '../assets/images/edit.png'
 import Delete from '../assets/images/delete.png'
 
 
-export const Todo = ({ ClickEdit, ClickDelete, tittle, description, color, key }) => {
+export const Todo = ({ ClickEdit, ClickDelete, tittle, description, color,  }) => {
   return (
-    <div key={ key }
-         style={{ border: `2px solid ${ color }` }}
+    <div style={{ border: `2px solid ${ color }` }}
          className={ 'TodoListContainer' }
     >
       <div className={ 'CirclesContainer' } >

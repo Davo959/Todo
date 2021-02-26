@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import {GetList, PendingFunction, SearchTodoList} from "../../../modules/ToDoRequestes/ToDoAction";
 import React from "react";
 
-export const Search = ({ }) => {
+export const Search = ( ) => {
   const dispatch = useDispatch();
   const [ SearchValue, SetValue ] = React.useState('')
 

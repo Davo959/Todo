@@ -1,7 +1,7 @@
 // Loader component
 import Loader from "react-loader-spinner";
 
-export const ReactLoader = ({ }) =>{
+export const ReactLoader = ( ) =>{
   return(
     <div style={{display:'flex',justifyContent:'center',marginTop:'10px'}}>
       <Loader

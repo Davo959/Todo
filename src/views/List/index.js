@@ -10,7 +10,7 @@ import { Search } from "./Components/Search";
 import { TittleComponent } from "../../components/Tittle";
 import {ReactLoader} from "../../components/ReactLoader";
 
-export const List = ({ }) => {
+export const List = ( ) => {
   const [ Edit, SetEdit ] = React.useState('')
   const [ Id, SetId ] = React.useState('')
   const dispatch = useDispatch();
@@ -54,14 +54,15 @@ export const List = ({ }) => {
           :
           (
             List.length ? List.map(( i, item ) => (
-          <Todo
-            key={ item }
-            tittle={ i.title }
-            description={ i.description }
-            color={ i.color }
-            ClickEdit={ () => OpenEditSection( i ) }
-            ClickDelete={ () => OpenDeleteSection( i ) }
-          />
+         <div  key={ item } >
+           <Todo
+             tittle={ i.title }
+             description={ i.description }
+             color={ i.color }
+             ClickEdit={ () => OpenEditSection( i ) }
+             ClickDelete={ () => OpenDeleteSection( i ) }
+           />
+         </div>
         )) : ''
           )
         }

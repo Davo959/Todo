@@ -8,9 +8,9 @@ import { CloseButton } from "../../../components/CloseButton";
 import { ErrMessage } from "../../../components/ErrMessage";
 
 export const EditTodo = ({ CloseSection, EditInfo }) => {
-  const [ title, setTittle ] = React.useState(null);
-  const [ description, setDescription ] = React.useState(null);
-  const [ color, setColor ] = React.useState('blue');
+  const [ title, setTittle ] = React.useState('');
+  const [ description, setDescription ] = React.useState('');
+  const [ color, setColor ] = React.useState('');
   const [ Error, SetError ] = React.useState(false);
   const [ itemId, setItemId ] = React.useState('');
   let dispatch = useDispatch()
@@ -73,7 +73,7 @@ export const EditTodo = ({ CloseSection, EditInfo }) => {
 
           <div className={ 'ColorsSircleDiv' }>
             { colorsList.map(( i, item ) => (
-                <div
+                <div key={item}
                   onClick={ () => handleCheckColor( i.color, item ) }
                   className={ 'ColorsSircle' }
                   style={{
