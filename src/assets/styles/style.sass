@@ -1,0 +1,331 @@
+@charset "UTF-8"
+/*Обнуление*/
+*
+  padding: 0
+  margin: 0
+  border: 0
+
+*, *:before, *:after
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+a:focus, a:active
+  outline: none
+
+h1, h2, h3, h4, h5, h6, p, span
+  font-family: Shippori Mincho, sans-serif
+
+nav, footer, header, aside
+  display: block
+
+p
+ font-style: normal
+ font-weight: 500
+ line-height: 15px
+ letter-spacing: 1px
+
+html, body
+  height: 100%
+  width: 100%
+  line-height: 1
+  font-size: 14px
+  -ms-text-size-adjust: 100%
+  -moz-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+input, button, textarea
+  font-family: inherit
+
+
+input::-ms-clear
+  display: none
+
+input
+  border: 2px solid black
+  border-radius: 12px
+  outline: none
+
+button
+  cursor: pointer
+  outline: none
+  &:hover
+    box-shadow:  0 0 6px 6px rgba(50, 53, 65, 0.25)
+
+button::-moz-focus-inner
+  padding: 0
+  border: 0
+
+a, a:visited
+  text-decoration: none
+
+a:hover
+  text-decoration: none
+
+ul li
+  list-style: none
+
+img
+  vertical-align: top
+
+::placeholder
+  font-family: Shippori Mincho, sans-serif
+  color: gray
+  font-size: 12px
+
+.ContainerBackground
+  background-image: url(../images/background.jpg)
+  width: 100%
+  height: 100vh
+  background-size: 100%
+  background-position: 0 0
+  display: flex
+  justify-content: center
+  align-items: center
+
+.Wrapper
+  background: white
+  border-radius: 12px
+  width: 320px
+  height: 90vh
+  padding: 0  15px 15px 15px
+  overflow-x: auto
+
+::-webkit-scrollbar
+  width: 0
+  background: transparent
+
+.AddTodoTask
+  display: flex
+  flex-direction: column
+  width: 100%
+
+.TextArea
+    outline: none
+    margin-top: 10px
+    height: 165px
+    border: 2px solid black
+    border-radius: 12px
+    padding: 10px
+    width: 100%
+
+.CreateTask
+    width: 35px
+    height: 35px
+    background: dodgerblue
+    color: white
+    font-size: 24px
+    margin: 15px auto 0 auto
+    border-radius: 24px
+    outline: none
+    &:active
+      box-shadow:  0 0 6px 6px rgba(50, 53, 65, 0.25)
+
+.TittleInput
+  width: 100%
+  padding: 10px
+
+.TodoListContainer
+  margin: 15px 0 5px 0
+  width: 290px
+  word-wrap: break-word
+  border-radius: 12px
+  box-shadow:  0 0 6px 6px rgba(50, 53, 65, 0.1)
+  &:hover
+    box-shadow:  0 0 6px 6px rgba(50, 53, 65, 0.25)
+
+.IconsSection
+  display: flex
+  justify-content: flex-end
+  button
+    margin-top: 10px
+    margin-right: 10px
+    border-radius: 24px
+    padding: 5px
+    background: none
+    border: none
+    &:hover
+      background: lightgray
+  img
+    width: 20px
+    height: 20px
+
+.TittleStyle
+  display: flex
+  flex-direction: column
+  padding: 10px
+  p
+    font-size: 18px
+    width: 260px
+    word-wrap: break-word
+
+.DescriptionStyle
+  margin: 10px 0 10px 0
+  span
+    color: black
+    font-size: 14px
+    letter-spacing: 1.2px
+
+.CirclesContainer
+  display: flex
+  justify-content: space-between
+  align-items: center
+.Circles
+  display: flex
+  padding-left: 10px
+  div
+    width: 10px
+    margin: 5px 2px 0 2px
+    height: 10px
+    border-radius: 24px
+
+.ErrMessageClass
+  color: red
+  font-size: 14px
+  margin: 10px auto
+
+.EditTodoStyle
+  position: absolute
+  background: white
+  width: 300px
+  height: 400px
+  border-radius: 12px
+  padding: 15px
+  input
+    width: 100%
+
+.DeleteTodoStyle
+  z-index: 20
+  position: absolute
+  background: white
+  width: 200px
+  height: 200px
+  border-radius: 12px
+  padding: 15px
+  input
+    width: 100%
+
+.CloseButton
+  margin: 40px 0 10px 0
+  width: 100%
+  height: 30px
+  background: red
+  border-radius: 6px
+  color: white
+  font-size: 16px
+  &:hover
+    box-shadow:  0 0 6px 6px rgba(50, 53, 65, 0.25)
+
+.SaveButton
+  margin-top: 10px
+  width: 100%
+  height: 30px
+  background: dodgerblue
+  border-radius: 6px
+  color: white
+  font-size: 16px
+
+.SaveAndCloseDiv
+  display: flex
+  justify-content: center
+  flex-direction: column
+  margin-top: 10px
+
+.CloseSectionButton
+  width: 25px
+  height: 25px
+  background: lightgray
+  border-radius: 24px
+  outline: none
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  margin-bottom: 10px
+  &:hover
+    box-shadow:  0 0 6px 6px rgba(50, 53, 65, 0.25)
+
+.BackDrop
+    position: fixed
+    z-index: 5
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background: rgba(66, 65, 73, 0.9)
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+
+.AreYouSure
+  font-size: 18px
+  font-weight: bold
+  line-height: 22px
+  margin-top: 20px
+  color: black
+  text-align: center
+
+.SearchStyle
+  width: 100%
+  height: 40px
+  padding: 7px
+  border: 2px solid black
+  border-radius: 12px
+  display: flex
+  justify-content: space-between
+  input
+    padding: 8px
+    width: 79%
+    border: none
+    outline: none
+
+.ListTextStyle
+    margin: 10px
+    display: flex
+    justify-content: center
+
+.RemoveAllButton
+  color: white
+  background: red
+  width: 100px
+  padding: 10px
+  margin: 20px auto
+  display: flex
+  justify-content: center
+  border-radius: 12px
+  outline: none
+
+.ColorsSircle
+  cursor: pointer
+  width: 20px
+  height: 20px
+  border-radius: 24px
+  &:hover
+   box-shadow:  0 0 6px 6px rgba(50, 53, 65, 0.25)
+
+.ColorsSircleDiv
+  margin-top: 10px
+  padding: 0 10px 0 10px
+  display: flex
+  justify-content: space-between
+
+.SearchIcon
+  background: none
+  outline: none
+  border-radius: 24px
+  &:hover
+    background: lightgray
+    box-shadow:  0 0 6px 6px rgba(50, 53, 65, 0.25)
+  img
+    width: 20px
+    height: 20px
+
+.ClearSearch
+  background: none
+  border-radius: 24px
+  &:hover
+    background: lightgray
+  img
+    width: 20px
+    height: 20px
