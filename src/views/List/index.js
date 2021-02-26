@@ -5,21 +5,22 @@ import { AddTodo } from "./Components/AddTodo";
 import React, { useEffect } from "react";
 import { ListContainer } from "../../components/ListContainer";
 import { useDispatch, useSelector } from "react-redux";
-import { GetList } from "../../modules/ToDoRequestes/ToDoAction";
+import {GetList, PendingFunction} from "../../modules/ToDoRequestes/ToDoAction";
 import { Search } from "./Components/Search";
 import { TittleComponent } from "../../components/Tittle";
+import {ReactLoader} from "../../components/ReactLoader";
 
 export const List = ({ }) => {
   const [ Edit, SetEdit ] = React.useState('')
   const [ Id, SetId ] = React.useState('')
   const dispatch = useDispatch();
 
-  const List = useSelector(state =>
-    state.ToDoReducer.ToDoList,
-  );
+  const List = useSelector(state => state.ToDoReducer.ToDoList,);
+  const Check = useSelector(state => state.ToDoReducer.CheckPending,);
 
   useEffect(() => (
-    dispatch( GetList() )
+    dispatch( GetList() ),
+    dispatch(PendingFunction (true))
   ), [ ] )
 
   const OpenEditSection = item => SetEdit(item)
@@ -46,7 +47,13 @@ export const List = ({ }) => {
           </>
           : ''
         }
-        { List.length ? List.map(( i, item ) => (
+        {Check === true ?
+            (
+            <ReactLoader/>
+            )
+          :
+          (
+            List.length ? List.map(( i, item ) => (
           <Todo
             key={ item }
             tittle={ i.title }
@@ -56,6 +63,7 @@ export const List = ({ }) => {
             ClickDelete={ () => OpenDeleteSection( i ) }
           />
         )) : ''
+          )
         }
         { List.length && List.length > 1 ?
           <button

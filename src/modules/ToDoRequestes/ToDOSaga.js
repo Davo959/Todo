@@ -1,7 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 import {TODO_REQUESTS} from "./ToDoReducer";
 import * as api from "../api";
-import {GetList} from "./ToDoAction";
+import {GetList, PendingFunction} from "./ToDoAction";
 
 // For get task list
 
@@ -17,6 +17,8 @@ function* handleSaga() {
       type: TODO_REQUESTS.GET_LIST_SUCCESS,
       payload: { data }
     });
+
+    yield put( PendingFunction(false ) )
 
   } catch (e) {
     console.log( e.message )
@@ -39,6 +41,7 @@ function* handleCreateSaga( action ) {
     });
 
     yield put( GetList() )
+    yield put( PendingFunction(false ) )
 
   } catch (e) {
     console.log( e.message )
@@ -60,6 +63,7 @@ function* handleDeleteSaga( action ) {
       payload: { data }
     });
     yield put( GetList() )
+    yield put( PendingFunction(false ) )
 
   } catch (e) {
     console.log( e.message )
@@ -81,6 +85,7 @@ function* handleEditSaga(action) {
       payload: { data }
     });
     yield put( GetList() )
+    yield put( PendingFunction(false ) )
 
   } catch (e) {
     console.log( e.message )
@@ -101,6 +106,8 @@ function* handleSearchSaga( action ) {
       type: TODO_REQUESTS.SEARCH_TODO_SUCCESS,
       payload: { data : [data] }
     });
+
+    yield put( PendingFunction(false ) )
 
   } catch (e) {
      console.log(e.message)

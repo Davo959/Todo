@@ -44,3 +44,11 @@ export const SearchTodoList = ( data ) => {
   }
 }
 
+
+export const PendingFunction = (data) => {
+  return{
+    type: TODO_REQUESTS.PENDING_TODO_REQUEST,
+    payload:{data}
+  }
+
+}

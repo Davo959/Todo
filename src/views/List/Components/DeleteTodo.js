@@ -1,7 +1,7 @@
 //Component for delete task
 
 import React from "react";
-import { DeleteTodoItem } from "../../../modules/ToDoRequestes/ToDoAction";
+import {DeleteTodoItem, PendingFunction} from "../../../modules/ToDoRequestes/ToDoAction";
 import { useDispatch } from "react-redux";
 import { CloseButton } from "../../../components/CloseButton";
 
@@ -10,12 +10,14 @@ export const DeleteTodo = ({ CloseDeleteSection, item }) => {
   const dispatch = useDispatch()
 
   const DeleteList = () => {
-    if ( item.length > 1 ) {
+    dispatch( PendingFunction( true ) )
 
+    if ( item.length > 1 ) {
       item.map(( i ) => (
         dispatch( DeleteTodoItem( i._id ) )
       ))
       CloseDeleteSection()
+
     } else {
       dispatch( DeleteTodoItem( item._id ) )
       CloseDeleteSection()

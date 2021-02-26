@@ -1,7 +1,7 @@
 //Component for delete task
 
 import React, { useEffect } from "react";
-import { EditTodoList } from "../../../modules/ToDoRequestes/ToDoAction";
+import {EditTodoList, PendingFunction} from "../../../modules/ToDoRequestes/ToDoAction";
 import { useDispatch } from "react-redux";
 import { colorsList } from "../../../configs/constants";
 import { CloseButton } from "../../../components/CloseButton";
@@ -37,6 +37,7 @@ export const EditTodo = ({ CloseSection, EditInfo }) => {
     let payload = { id, title, description, color }
 
     if ( title && description ) {
+      dispatch( PendingFunction( true ) )
       dispatch( EditTodoList( payload ) )
       CloseSection( )
     } else {

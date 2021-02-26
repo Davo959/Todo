@@ -1,7 +1,7 @@
 //Component for create task
 
 import { useDispatch } from "react-redux";
-import { CreateList } from "../../../modules/ToDoRequestes/ToDoAction";
+import {CreateList, PendingFunction} from "../../../modules/ToDoRequestes/ToDoAction";
 import React from "react";
 import { ErrMessage } from "../../../components/ErrMessage";
 import { TittleComponent } from "../../../components/Tittle";
@@ -20,6 +20,8 @@ export const AddTodo = ({ }) => {
     let color = Color ? Color : 'red'
     let payload = { Tittle, Description, color }
     if ( Tittle && Description ) {
+      dispatch( PendingFunction( true ) )
+
       dispatch( CreateList( payload ) )
       setTittle('')
       setDescription('')

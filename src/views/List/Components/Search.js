@@ -3,7 +3,7 @@
 import ClearSearch from "../../../assets/images/ClearSearch.png";
 import search from '../../../assets/images/search.png'
 import { useDispatch } from "react-redux";
-import { GetList, SearchTodoList } from "../../../modules/ToDoRequestes/ToDoAction";
+import {GetList, PendingFunction, SearchTodoList} from "../../../modules/ToDoRequestes/ToDoAction";
 import React from "react";
 
 export const Search = ({ }) => {
@@ -17,10 +17,12 @@ export const Search = ({ }) => {
   const searchList = ( ) => {
     if ( SearchValue ) {
       dispatch( SearchTodoList( SearchValue ) )
+      dispatch( PendingFunction( true ) )
     }
   }
 
   const clearSearchData = ( ) => {
+    dispatch( PendingFunction( true ) )
     dispatch( GetList() )
     SetValue('' )
   }
